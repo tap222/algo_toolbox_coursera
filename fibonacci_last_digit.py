@@ -1,19 +1,10 @@
 # Uses python3
 import sys
 
-def get_fibonacci_last_digit_naive(n):
-    if n <= 1:
-        return n
+def pisano_method(n,m):
+    Lemma : (a + b ) % m = [(a % m) + (b % m)] % m
+    F(i + 2) = F(i) + F(i + 1)
+    F(i+2)%m = [F(i) + F(i+1)]%m
+    for i = 0:
 
-    previous = 0
-    current  = 1
 
-    for _ in range(n - 1):
-        previous, current = current, previous + current
-
-    return current % 10
-
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    n = int(input)
-    print(get_fibonacci_last_digit_naive(n))
